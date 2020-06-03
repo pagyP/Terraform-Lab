@@ -1,0 +1,1 @@
+vpngwsku = "vpngw1"
