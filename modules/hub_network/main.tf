@@ -20,7 +20,7 @@ for_each                = var.subnet_config
   name                    = each.value.name
   resource_group_name     = azurerm_resource_group.hubvnetrg.name
   virtual_network_name    = azurerm_virtual_network.hubvnet.name
-  address_prefix          = each.value.cidr_base
+  address_prefixes          = [each.value.cidr_base]
 }
 
 output "subnet_ids_map" {
