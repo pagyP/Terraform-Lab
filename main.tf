@@ -6,7 +6,7 @@ provider "azurerm" {
   version = ">= 2.0"
   features {}
 }
-#Configure Remote State
+#Configure Remote State - To be used when in a CICD pipeline
 #terraform{
 #   backend "azurerm"{}
 #}
