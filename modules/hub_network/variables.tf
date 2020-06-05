@@ -73,6 +73,6 @@ variable "subnet_config" {
   }
   description = "Optional Input - Subnet config map for each subnet to be created in either existing or newly created VNET based on. (create_vnet=true/false)"
 }
-variable "subnets" {
-  description = "map structure for the subnets to be created"
-}
+# variable "subnets" {
+#   description = "map structure for the subnets to be created"
+# }

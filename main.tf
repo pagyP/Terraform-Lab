@@ -16,7 +16,7 @@ module "hubnetwork" {
   resource_group_name = var.hub_resource_group_name
   location            = var.location
   address_space       = var.hub_address_space
-  subnets = var.subnet_config
+  #subnets = var.subnet_config
   #subnet_prefixes     = var.hub_subnet_prefixes
   #subnet_names        = var.hub_subnet_names
   #subnet_prefixes = var.subnet_config
