@@ -21,6 +21,7 @@ module "hubnetwork" {
   #subnet_names        = var.hub_subnet_names
   #subnet_prefixes = var.subnet_config
   #subnet_names = var.subnet_config
+  subnet_config = var.subnet_config
 
   tags = var.tags
 }

@@ -1,3 +1,4 @@
+
 resource "azurerm_resource_group" "hubvnetrg" {
   name     = var.resource_group_name
   location = var.location
