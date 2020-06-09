@@ -16,12 +16,12 @@ resource "azurerm_virtual_network" "hubvnet" {
 }
 
 resource "azurerm_subnet" "hub_subnet" {
-for_each                = var.subnet_config
+  for_each = var.subnet_config
 
-  name                    = each.value.name
-  resource_group_name     = azurerm_resource_group.hubvnetrg.name
-  virtual_network_name    = azurerm_virtual_network.hubvnet.name
-  address_prefixes          = [each.value.cidr_base]
+  name                 = each.value.name
+  resource_group_name  = azurerm_resource_group.hubvnetrg.name
+  virtual_network_name = azurerm_virtual_network.hubvnet.name
+  address_prefixes     = [each.value.cidr_base]
 }
 
 #At one point I used a child module to create the subnets.  Seemed overly complex and unnecessary to do so

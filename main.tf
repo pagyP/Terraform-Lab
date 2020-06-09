@@ -16,12 +16,7 @@ module "hubnetwork" {
   resource_group_name = var.hub_resource_group_name
   location            = var.location
   address_space       = var.hub_address_space
-  #subnets = var.subnet_config
-  #subnet_prefixes     = var.hub_subnet_prefixes
-  #subnet_names        = var.hub_subnet_names
-  #subnet_prefixes = var.subnet_config
-  #subnet_names = var.subnet_config
-  subnet_config = var.subnet_config
+  subnet_config       = var.subnet_config
 
   tags = var.tags
 }
@@ -35,8 +30,8 @@ module "vpngw" {
   #Below line was used when subnets were in a list
   #gatewaysubnetid     = module.hubnetwork.vnet_subnets[0]
   gatewaysubnetid = lookup(module.hubnetwork.subnet_ids_map, "GatewaySubnet", null)
-  tags = var.tags
-  vpngwsku            = var.vpngwsku
+  tags            = var.tags
+  vpngwsku        = var.vpngwsku
 }
 
 

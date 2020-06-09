@@ -32,5 +32,5 @@ variable "tags" {
 
 variable "vpngwsku" {
   description = "the sku type of the VPN gateway"
-  default = "Basic"
+  default     = "Basic"
 }
