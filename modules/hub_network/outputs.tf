@@ -10,10 +10,10 @@ output "vnet_id" {
 
 output "subnet_ids_map" {
 
-  depends_on = [azurerm_subnet.hub_subnet ]
+  depends_on = [azurerm_subnet.hub_subnet]
   #value = azurerm_subnet.hub_subnet[each.key]
   value = {
-    for subnet in azurerm_subnet.hub_subnet:
+    for subnet in azurerm_subnet.hub_subnet :
     subnet.name => subnet.id
   }
 }

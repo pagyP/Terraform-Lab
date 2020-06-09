@@ -40,9 +40,9 @@ variable "hub_subnet_names" {
 */
 
 variable "subnet_config" {
-  type = map
+  type    = map
   default = {}
-  }
+}
 
 variable "tags" {
   description = "The tags to associate with your network and subnets."
@@ -66,6 +66,6 @@ variable "vpngwname" {
 
 variable "vpngwsku" {
   description = "the sku type of the VPN gateway"
-  default = "Basic"
+  default     = "Basic"
 }
 

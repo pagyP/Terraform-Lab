@@ -46,9 +46,9 @@ variable "tags" {
 
 
 variable "subnet_config" {
-  type = map
+  type    = map
   default = {}
-  }
-  
+}
+
 
 
