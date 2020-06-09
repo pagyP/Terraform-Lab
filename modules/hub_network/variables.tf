@@ -44,15 +44,11 @@ variable "tags" {
   }
 }
 
-# variable "subnet_config" {
-#     default = {}
-# }
+
 variable "subnet_config" {
   type = map
   default = {}
   }
   
 
-# variable "subnets" {
-#   description = "map structure for the subnets to be created"
-# }
+

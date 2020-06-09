@@ -38,28 +38,7 @@ variable "hub_subnet_names" {
   #default     = ["GateWaySubnet", "Subnet3"]
 }
 */
-# variable "subnet_config" {
-#   type = map
-#   default = {
-#     Gateway = {
-#       name      = "GatewaySubnet"
-#       cidr_base = "10.0.1.0/24"
-#     }
-#     Dmz2 = {
-#       name      = "Dmz2"
-#       cidr_base = "10.0.2.0/24"
-#     }
-#     Prod = {
-#       name      = "Prod"
-#       cidr_base = "10.0.3.0/24"
-#     }
-#     Dev = {
-#       name      = "Dev"
-#       cidr_base = "10.0.4.0/24"
-#     }
-#   }
-#   description = "Optional Input - Subnet config map for each subnet to be created in either existing or newly created VNET based on. (create_vnet=true/false)"
-# }
+
 variable "subnet_config" {
   type = map
   default = {}

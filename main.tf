@@ -32,8 +32,8 @@ module "vpngw" {
   resource_group_name = module.hubnetwork.hubrgname
   location            = var.location
   vpnpipname          = var.vpnpipname
+  #Below line was used when subnets were in a list
   #gatewaysubnetid     = module.hubnetwork.vnet_subnets[0]
-  #gatewaysubnetid = module.hubnetwork.module.subnets.output.subnet_ids_map[each.key].id
   gatewaysubnetid = lookup(module.hubnetwork.subnet_ids_map, "GatewaySubnet", null)
   tags = var.tags
   vpngwsku            = var.vpngwsku
