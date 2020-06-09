@@ -23,16 +23,16 @@ variable "dns_servers" {
   default     = []
 }
 
-variable "subnet_prefixes" {
-  type = list
-  description = "The address prefix to use for the subnet."
-  default     = ["10.0.1.0/24"]
-}
+# variable "subnet_prefixes" {
+#   type = list
+#   description = "The address prefix to use for the subnet."
+#   default     = ["10.0.1.0/24"]
+# }
 
-variable "subnet_names" {
-  description = "A list of public subnets inside the vNet."
-  default     = ["subnet1"]
-}
+# variable "subnet_names" {
+#   description = "A list of public subnets inside the vNet."
+#   default     = ["subnet1"]
+# }
 
 variable "tags" {
   description = "The tags to associate with your network and subnets."
