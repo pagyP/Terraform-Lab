@@ -4,6 +4,6 @@ output "subnets" {
 }
 */
 
-output "subnets" {
+output "hub_subnets" {
   value = module.hubnetwork.subnet_ids_map
 }

@@ -23,3 +23,5 @@ subnet_config = {
     cidr_base = "10.0.5.0/24"
   }
 }
+
+hub_address_space = "10.0.0.0/16"
