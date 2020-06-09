@@ -24,15 +24,7 @@ for_each                = var.subnet_config
   address_prefixes          = [each.value.cidr_base]
 }
 
-output "subnet_ids_map" {
-
-  depends_on = [azurerm_subnet.hub_subnet ]
-  #value = azurerm_subnet.hub_subnet[each.key]
-  value = {
-    for subnet in azurerm_subnet.hub_subnet:
-    subnet.name => subnet.id
-  }
-}
+#At one point I used a child module to create the subnets.  Seemed overly complex and unnecessary to do so
 # module "subnets" {
 #   source                = "./subnet"
 
@@ -43,6 +35,7 @@ output "subnet_ids_map" {
 #   location              = azurerm_virtual_network.hubvnet.location
 # }
 /*
+#The below was using count for the subnets.  Changed in favour of the for_each method above
 resource "azurerm_subnet" "hubsubnets" {
   name                 = var.subnet_names[count.index]
   virtual_network_name = azurerm_virtual_network.hubvnet.name
@@ -52,19 +45,9 @@ resource "azurerm_subnet" "hubsubnets" {
   count                = length(var.subnet_names)
 }
 */
-/*
-resource "azurerm_subnet" "hubsubnets" {
-  for_each = var.subnet_config
-  subnet_config = var.subnet_config
-  name                 = each.value.name
-  virtual_network_name = azurerm_virtual_network.hubvnet.name
-  resource_group_name  = azurerm_resource_group.hubvnetrg.name
-  #address_prefix       = var.subnet_prefixes[count.index]
-  address_prefixes = each.value.cidr_base
-  #count                = length(var.subnet_names)
-}
-*/
 
+#Before I figured out how to output the subnet IDs as a map I considered having a special subnets section
+#to make it easier to output subnet IDs for things like VPN gateways and Azure firewall
 #Special Subnets
 /*resource "azurerm_subnet" "gatewaysubnet" { 
   name = "GateWaySubnet"
