@@ -1,6 +1,3 @@
-vpngwsku = "vpngw1"
-
-
 subnet_config = {
   Gateway = {
     name      = "GatewaySubnet"
@@ -25,3 +22,23 @@ subnet_config = {
 }
 
 hub_address_space = "10.0.0.0/16"
+
+hub_resource_group_name  = "hub-vnet-rg"
+
+location  = "northeurope"
+
+hub_vnet_name = "hub_vnet"
+
+tags =   {
+    customer    = "Lab"
+    environment = "Dev"
+    IaCMethod  = "terraform"
+    deployedby = "Manual"
+  }
+
+vpnpipname = "labgwpip"
+
+vpngwname = "labvpngw"
+
+vpngwsku = "Basic"
+    
